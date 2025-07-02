@@ -21,15 +21,19 @@ class Account():
 class Student(Account):
     def __init__(self,balance,withdraw,deposit,sloan):
         super().__init__(balance,withdraw,deposit)
+        self.sloan=int(sloan)
     def sln(self):
-        self.balance=self.balance+self.loan
+        self.sloan=self.balance+self.loan
+        self.balance=self.sloan+self.balance
         print("YOU HAVE 30 DAYS TO REPAY",self.loan*1.05)
         print("YOU NOW HAVE",self.balance)
 
 class Savings(Account):
     def __init__(self,balance,withdraw,deposit,loan,interest):
         super().__init__(balance,withdraw,deposit,loan)
+        self.interest=int(interest)
     def inter(self):
-        self.balance=self.balance+self.balance*1.04
+        self.interest=self.balance+self.balance*1.04
+        self.balance=self.interest+self.balance
         print("CURRENT BALANCE IS",self.balance)
         print("BALANCE WILL INCREASE BY 4 PERCENT EVERY THREE MONTHS")
